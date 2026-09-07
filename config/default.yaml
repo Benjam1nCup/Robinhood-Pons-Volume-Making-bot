@@ -1,0 +1,62 @@
+bot:
+  dry_run: true
+  enabled: true
+  log_level: INFO
+  log_file: logs/market_maker.log
+  confirm_live_trading: "NO"
+  poll_interval_s: 5.0
+  dashboard_interval_s: 30.0
+
+chain:
+  chain_id: 4663
+  rpc_url: https://rpc.mainnet.chain.robinhood.com
+  request_timeout_s: 30.0
+  log_chunk_size: 1000
+
+pons:
+  active_factory: "0xA5aAb3F0c6EeadF30Ef1D3Eb997108E976351feB"
+  active_factory_start_block: 8991118
+  legacy_factory: "0x0c37a24F5D23A486FA692d1500881d698B1F77a4"
+  legacy_factory_start_block: 8600612
+  swap_router: "0xCaf681a66D020601342297493863E78C959E5cb2"
+  quoter_v2: "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7"
+  weth: "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73"
+  fixed_supply: 1000000000
+  pool_fee: 10000
+  graduation_threshold_eth: 4.2
+
+strategy:
+  # Market-making parameters (tutorial section 29)
+  base_spread: 0.025
+  price_window: 10
+  volatility_spread_multiplier: 1.5
+  max_inventory_tokens: 10000
+  max_trade_size_tokens: 500
+  max_trade_eth: 0.005
+  min_liquidity_weth: 0.01
+  min_pool_swaps: 1
+  trade_cooldown_s: 60.0
+  liquidity_fraction: 0.02
+  auto_register_launches: true
+  target_token: ""
+
+execution:
+  gas_limit: 500000
+  max_slippage: 0.02
+  max_slippage_bps: 200
+  tx_confirm_timeout_s: 120.0
+  min_gas_balance_eth: 0.002
+  max_gas_cost_eth: 0.01
+
+risk:
+  max_position_tokens: 10000
+  max_trade_size_tokens: 500
+  max_slippage: 0.02
+  max_daily_loss_eth: 0.1
+  max_gas_cost_eth: 0.01
+
+wallet:
+  private_key: ""
+
+storage:
+  database_path: data/market_maker.db
