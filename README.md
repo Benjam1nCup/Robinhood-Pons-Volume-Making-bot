@@ -1,6 +1,6 @@
-# Robinhood Pons Market-Making Bot
+# Robinhood Pons Volume-Making Bot
 
-Educational market-making / liquidity bot for [pons](https://docs.ponsfamily.com/) tokens on **Robinhood Chain** (chain ID `4663`).
+Educational Volume-making / liquidity bot for [pons](https://docs.ponsfamily.com/) tokens on **Robinhood Chain** (chain ID `4663`).
 
 The bot monitors pons Uniswap V3 pools, calculates fair value and inventory-aware bid/ask quotes, executes controlled trades through the official swap router, and tracks PnL, gas, and volume in SQLite.
 
